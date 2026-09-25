@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon blason</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <nav class="top-nav" aria-label="Menu principal">
+            <a href="index.html">Accueil</a>
+            <a href="motto.html">Devise du jour</a>
+            <a href="students.html">Blasons des étudiants</a>
+        </nav>
+
+        <div class="header" id="home">
+            <h1>Mon blason</h1>
+            <img src="avatar.png" alt="Avatar" class="avatar">
+        </div>
+
+        <section class="page-intro">
+            <p>
+                Ce projet de travaux pratiques consiste à créer un site web sur le thème des blasons de la classe.
+                L’objectif est de présenter une courte biographie, une devise personnelle et une page regroupant les
+                blasons de tous les élèves, afin de découvrir les bases du développement web, de la mise en page et
+                de la navigation entre plusieurs pages.
+            </p>
+        </section>
+
+        <table id="arms">
+            <tr>
+                <td colspan="2" class="titre">
+                    <h2>Qui suis-je ?</h2>
+                    <p>Thomas Mariès</p>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="coat-section-1">
+                    <h2>Mes loisirs</h2>
+                    <p>Boxe française et tous les sports de combat en général, parkour, échecs</p>
+                </td>
+
+                <td class="coat-section-2">
+                    <h2>Ce qui me distingue</h2>
+                    <p>Persévérance, curiosité et envie d’apprendre.</p>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="coat-section-3">
+                    <h2>Mon objectif pour cette année</h2>
+                    <p>Passer mon permis et avoir une voiture</p>
+                </td>
+
+                <td class="coat-section-4">
+                    <h2>Comment je me vois dans 10 ans</h2>
+                    <p>Ingénieur IA à Singapour</p>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2" class="titre" id="about">
+                    <h2>Ma devise</h2>
+                    <p>« Qui ose gagne »</p>
+                </td>
+            </tr>
+        </table>
+
+        <div class="motto-section" id="motto">
+            <h2>Devise aléatoire</h2>
+            <p id="mottoDisplay" class="motto-display">« Qui ose gagne »</p>
+            <div class="motto-actions">
+                <button id="randomMottoButton" type="button">Afficher une devise</button>
+                <button id="randomColorButton" type="button">Changer la couleur de la case devise</button>
+            </div>
+        </div>
+
+        <button id="themeButton" type="button">Mode sombre</button>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
