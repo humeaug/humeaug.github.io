@@ -1,0 +1,514 @@
+<title>Mon Blason - Gabin Humeau</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+<style>
+    :root {
+        --primary: #252525;
+        --secondary: #e79212;
+        --dark: #1a1a2e;
+        --light: #000000;
+        --accent: #fbbf24;
+        --text-dark: #333;
+        --text-light: #fff;
+        --shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Inter', sans-serif;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        background-color: var(--light);
+        color: var(--text-dark);
+        min-height: 100vh;
+    }
+
+    .navbar {
+        width: 100%;
+        background: #1a1a2e;
+        padding: 1rem 2rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .navbar ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .navbar a {
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.3s;
+    }
+
+    .navbar a:hover {
+        color: #fbbf24;
+    }
+
+    /* =========================
+       CONTENU
+    ========================= */
+
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        width: 95%;
+        padding: 2rem 0;
+    }
+
+    .title {
+        text-align: center;
+        margin-bottom: 2rem;
+        font-size: 2.8rem;
+        font-weight: 600;
+        color: white;
+        position: relative;
+        padding-bottom: 0.5rem;
+    }
+
+    .title::after {
+        content: '';
+        display: block;
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, var(--primary), var(--secondary));
+        margin: 10px auto;
+    }
+
+    .presentation {
+        background: white;
+        border-radius: 12px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: var(--shadow);
+        line-height: 1.8;
+        font-size: 1.1rem;
+    }
+
+    .presentation h2 {
+        color: #1a1a2e;
+        margin-bottom: 1rem;
+    }
+
+    .presentation p {
+        margin-bottom: 1rem;
+    }
+
+    /* =========================
+       BLASON
+    ========================= */
+
+    .blason {
+        background: white;
+        border-radius: 12px;
+        box-shadow: var(--shadow);
+        overflow: hidden;
+        margin: 2rem auto;
+        width: 100%;
+        border: 1px dotted rgba(0, 0, 0, 0.1);
+        animation: fadeIn 0.5s ease-out forwards;
+    }
+
+    .blason table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .blason td {
+        padding: 1.2rem 1.5rem;
+        font-size: 1.1rem;
+        transition: all 0.5s ease;
+        border-bottom: 1px dotted rgba(0, 0, 0, 0.1);
+        position: relative;
+        cursor: pointer;
+        border-left: 1px dotted rgba(0, 0, 0, 0.1);
+    }
+
+    .blason tr:first-child td {
+        background: linear-gradient(135deg, #2a5ce6, #4a90e2);
+        color: var(--text-light);
+        font-weight: 600;
+        padding-bottom: 1.5rem;
+    }
+
+    .blason tr:nth-child(2) td {
+        background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+        color: var(--text-light);
+    }
+
+    .blason tr:nth-child(3) td {
+        background: linear-gradient(135deg, #4ecdc4, #44a08d);
+        color: var(--text-light);
+    }
+
+    .blason tr:last-child td {
+        background: linear-gradient(135deg, #a8edea, #fed6e3);
+        color: #333;
+        font-weight: 600;
+        padding: 1.5rem;
+        text-align: center;
+    }
+
+    .blason td:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow) inset 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* =========================
+       AVATAR
+    ========================= */
+
+    .avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid #ff6b6b;
+        margin: 0 auto 10px auto;
+        display: block;
+        background-size: cover;
+        background-position: center;
+    }
+
+    /* =========================
+       BOUTON COULEUR
+    ========================= */
+
+    .buttons {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin: 2rem 0;
+    }
+
+    .btn {
+        border: none;
+        padding: 1rem 1.5rem;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        color: white;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    }
+
+    .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 7px 15px rgba(0, 0, 0, 0.35);
+    }
+
+    .btn-couleur {
+        background: linear-gradient(135deg, #e79212, #fbbf24);
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    .footer {
+        text-align: center;
+        margin-top: 3rem;
+        color: #aaa;
+        font-size: 0.9rem;
+        padding: 1rem;
+        border-top: 1px dotted rgba(255, 255, 255, 0.2);
+    }
+
+    /* =========================
+       ANIMATION
+    ========================= */
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 700px) {
+
+        .navbar ul {
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .title {
+            font-size: 2rem;
+        }
+
+        .blason td {
+            display: block;
+            width: 100%;
+        }
+
+        .buttons {
+            flex-direction: column;
+        }
+
+        .btn {
+            width: 100%;
+        }
+    }
+</style>
+<!-- =========================
+     MENU DE NAVIGATION
+========================= -->
+
+<nav class="navbar">
+    <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="devises.html">Devise du jour</a></li>
+        <li><a href="blasons.html">Blasons des élèves</a></li>
+    </ul>
+</nav>
+
+
+<!-- =========================
+     CONTENU PRINCIPAL
+========================= -->
+
+<main class="container">
+
+    <h1 class="title">Mon Blason - Gabin Humeau</h1>
+
+
+    <!-- =========================
+         PRESENTATION DU TP
+    ========================= -->
+
+    <section class="presentation">
+
+        <h2>Présentation du TP</h2>
+
+        <p>
+            Dans le cadre de ce TP, nous avons réalisé un blason afin de
+            nous présenter de manière originale et personnelle.
+        </p>
+
+        <p>
+            Le concept du blason vient à l'origine de l'héraldique.
+            Un blason permettait notamment d'identifier une personne,
+            une famille ou un groupe grâce à différents symboles,
+            couleurs et éléments représentatifs.
+        </p>
+
+        <p>
+            Pour ce TP, nous avons adapté ce concept afin de créer notre
+            propre blason. Celui-ci permet de présenter différentes
+            informations sur nous-mêmes, comme notre personnalité,
+            nos loisirs, nos objectifs, ce qui nous distingue et
+            notre devise personnelle.
+        </p>
+
+        <p>
+            Chaque élève possède ainsi son propre blason, qui permet
+            de mieux connaître ses goûts, ses ambitions et sa personnalité.
+        </p>
+
+        <p>
+            Vous pouvez utiliser le menu en haut de la page pour découvrir
+            la devise de la classe ou consulter les blasons des autres élèves.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         MON BLASON
+    ========================= -->
+
+    <div class="blason">
+
+        <table>
+
+            <!-- Qui suis-je ? -->
+
+            <tr>
+                <td colspan="2">
+
+                    <div class="avatar"
+                        style="background-image: url('https://www.pixfan.com/wp-content/uploads/2019/09/Ryan-Jefferds_Im-Open_00002375.jpg');">
+                    </div>
+
+                    <div style="text-align: center; margin-top: 10px;">
+                        <strong>Qui suis-je ?</strong><br>
+                        Gabin Humeau, 18 ans, Homme
+                    </div>
+
+                </td>
+            </tr>
+
+
+            <!-- Loisirs -->
+
+            <tr>
+                <td>
+                    Mes loisirs : Sortir, jeu vidéo
+                </td>
+
+                <td>
+                    Ce qui me distingue : 32gb de RAM 7200MHz
+                </td>
+            </tr>
+
+
+            <!-- Objectifs -->
+
+            <tr>
+                <td>
+                    Mon objectif pour cette année : réussir mon BTS
+                </td>
+
+                <td>
+                    Comment je me vois dans 10 ans : maison, femme, enfants
+                </td>
+            </tr>
+
+
+            <!-- Ma devise -->
+
+            <tr>
+                <td colspan="2" id="maDevise">
+                    Ma devise : Qui fait le malin tombe dans le ravin
+                </td>
+            </tr>
+
+        </table>
+
+    </div>
+
+
+    <!-- =========================
+         BOUTON POUR CHANGER LA COULEUR
+    ========================= -->
+
+    <div class="buttons">
+
+        <button class="btn btn-couleur" onclick="changerCouleur()">
+             Changer la couleur de ma devise
+        </button>
+
+    </div>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="footer">
+    <p>© 2026 Mon Blason - Gabin Humeau</p>
+</footer>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+    /* =====================================================
+       LISTE D'UNE VINGTAINE DE COULEURS
+    ===================================================== */
+
+    const couleurs = [
+
+        "#FF0000",
+        "#00FF00",
+        "#0000FF",
+        "#FFFF00",
+        "#FFA500",
+        "#800080",
+        "#FFC0CB",
+        "#00FFFF",
+        "#008080",
+        "#000080",
+        "#A52A2A",
+        "#808080",
+        "#000000",
+        "#FFFFFF",
+        "#FFD700",
+        "#C0C0C0",
+        "#4B0082",
+        "#EE82EE",
+        "#32CD32",
+        "#DC143C"
+
+    ];
+
+
+    /* =====================================================
+       CHANGER LA COULEUR DE LA DEVISE
+    ===================================================== */
+
+    function changerCouleur() {
+
+        const nombreAleatoire =
+            Math.floor(Math.random() * couleurs.length);
+
+        const couleurChoisie =
+            couleurs[nombreAleatoire];
+
+        const caseDevise =
+            document.getElementById("maDevise");
+
+        caseDevise.style.background =
+            couleurChoisie;
+
+
+        /* Change la couleur du texte pour
+           qu'il reste lisible */
+
+        if (
+            couleurChoisie === "#FFFF00" ||
+            couleurChoisie === "#FFFFFF" ||
+            couleurChoisie === "#FFD700" ||
+            couleurChoisie === "#FFC0CB" ||
+            couleurChoisie === "#00FF00" ||
+            couleurChoisie === "#32CD32" ||
+            couleurChoisie === "#C0C0C0" ||
+            couleurChoisie === "#00FFFF" ||
+            couleurChoisie === "#EE82EE"
+        ) {
+
+            caseDevise.style.color = "#000000";
+
+        } else {
+
+            caseDevise.style.color = "#FFFFFF";
+
+        }
+
+    }
+
+</script>
